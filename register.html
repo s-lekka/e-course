@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta name="revised" content="17/11/2021">
+    <meta charset="utf-8">
+    <meta name=author content="3090108-3180279">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Εργασία 2 | ΠΧ3 | Εγγραφή</title>
+    <link rel="icon" href="images/school-notebook-free-download.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
+    <link href="styles/format.css" rel="stylesheet" type="text/css" />
+    <link href="styles/colors-and-fonts.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script  src="scripts/register.js"></script>
+    <script  src="scripts/script.js"></script>
+</head>
+
+<body>
+   
+    <header>
+
+        <nav>
+            <a href="index.html">Αρχική</a>
+            
+            <div class="dropdown">Κατηγορίες</div>
+            <div id="categories-target" class="dropdown-links">loading...</div>
+            
+            <a class="active" href="register.html">Εγγραφή</a>
+            <a href="profile.html">Προφίλ</a>
+            
+        </nav>
+
+    </header>
+
+    <main>
+        
+        <div id="go-to-index-msg"></div>
+
+        <form id="register-form" autocomplete="on" accept-charset="utf-8">
+            <fieldset>
+                <legend>Sign-Up Form</legend>
+                <fieldset>
+                    <legend>Personalia</legend>
+                    <label for="first-name">Όνομα</label><br>
+                    <input type="text" placeholder="ΟΝΟΜΑ" id="first-name" name="fname" autocomplete="given-name" required><br>
+                    <label for="last-name">Επώνυμο</label><br>
+                    <input type="text" placeholder="ΕΠΩΝΥΜΟ" id="last-name" name="lname" autocomplete="family-name" required><br>
+                    <label for="tel">Τηλέφωνο</label><br>
+                    <input type="tel" placeholder="" id="tel" name="phone" pattern="[\d]{10}" title="10 digit number" autocomplete="tel" required><br>
+                    <label for="address">Διεύθυνση</label><br>
+                    <input type="text" placeholder="" id="address" name="adr" autocomplete="on" required><br>
+                    <label for="edu-lvl">Μορφωτικό Επίπεδο</label><br>
+                    <input list="edu" id="edu-lvl" name="edulvl" required>
+                    <datalist id="edu">
+                        <option value="Πρωτοβάθμια Εκπαίδευση">
+                        <option value="Δευτεροβάθμια Εκπαίδευση">
+                        <option value="Τριτοβάθμια Εκπαίδευση">
+                        <option value="Τριτοβάθμια Εκπαίδευση-Μεταπτυχιακό">
+                        <option value="Τριτοβάθμια Εκπαίδευση-Διδακτορικό">
+                    </datalist>
+                </fieldset>
+                <fieldset>
+                    <legend>Credentials</legend>
+                    <label for="email">e-mail</label><br>
+                    <input type="email" placeholder="email" id="email" name="email" autocomplete="email" required><br>
+                    <label for="password">Κωδικός</label><br>
+                    <input type="password" placeholder="password" id="password" name="pw" autocomplete="off"
+                            title="minimum 8 characters. at least 1 letter, 1 digit and 1 symbol. valid symbols are !@#$%^&*" 
+                            pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{8,}" minlength="8" required><br>
+                    <label for="chk-pw">Επιβεβαίωση Κωδικού</label><br>
+                    <input type="password" placeholder="password" id="chk-pw" name="pwcheck" title="must be same as field above" autocomplete="off" pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{8,}" minlength="8" required><br>
+                </fieldset>
+                <button id="register-bttn" type="submit">Sign Up</button>
+            </fieldset>
+        </form>
+
+        <br>
+        <div id="pw-target"></div>
+        <br>
+        <div id="error-target"></div>
+
+        <script id="categories-template" type="text/x-handlebars-template">
+        
+            {{#each categories}}
+            <a href="courses.html?category={{id}}">{{title}}</a>
+            {{/each}}
+        
+        </script>
+
+    </main>
+
+    <footer>
+        <hr>
+        <p>
+            Ο ιστότοπος αναπτύχθηκε από τη Λέκκα Σταυρούλα.
+        </p>
+    </footer>
+
+</body>
+
+</html>
+

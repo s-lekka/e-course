@@ -1,0 +1,163 @@
+:root {
+    --main-color: #003a48;
+    --highlight-color: #007792;
+    --shadow-color: #01151a;
+    --accent-color: #b51b06;
+    --neutral-color: #C8C8C8;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: var(--neutral-color);
+}
+
+main {
+    font-size: 75%;
+}
+
+nav {
+    background-color: var(--main-color);
+    border-color: var(--shadow-color);
+}
+
+nav * {
+    color: var(--neutral-color);
+    border-right-color: var(--highlight-color);
+    font-weight: normal;
+    font-size: 90%;
+}
+
+button i {
+    color: var(--shadow-color);
+}
+
+button {
+    background-color: var(--neutral-color);
+}
+
+/*
+Hover πανω απο το navigation
+αλλαγη χρώματος του backgound
+και των γραμμάτων 
+της επιλογης.
+*/
+nav a:hover, .dropdown:hover {
+    background-color: var(--highlight-color);
+    color: var(--main-color);
+    font-weight: bold;
+    cursor: default;
+}
+
+nav a:visited {
+    background-color: initial;
+}
+
+nav a:focus {
+    background-color: var(--highlight-color);
+    color: var(--neutral-color);
+}
+
+.active {
+    background-color: var(--accent-color);
+    color: var(--neutral-color);
+}
+
+.active:hover, .dropdown.active:hover {
+    color: var(--accent-color);
+    background-color: var(--neutral-color);
+}
+
+footer p {
+    font-size: smaller;
+}
+
+.dropdown-links {
+    background-color: var(--main-color);
+    box-shadow: var(--shadow-color);
+}
+
+h1, h2, h3 {
+    color: var(--main-color);
+}
+
+p {
+    color: var(--shadow-color);
+}
+
+h1 {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: var(--main-color);
+}
+
+img {
+    border-color: var(--main-color);
+}
+
+div > li {
+    border-color: var(--main-color);
+    box-shadow: 0 0 20px 0 var(--shadow-color);
+}
+
+fieldset {
+    color: var(--neutral-color);
+    text-shadow: var(--shadow-color) 1px 0 5px;
+    font-weight: bold;
+    box-shadow: 0 0 20px 0 var(--shadow-color);
+    background-color: var(--main-color);
+    border-color: var(--neutral-color);
+}
+
+#register-bttn, #profile-bttn {
+    background-color: var(--accent-color);
+    color: var(--neutral-color);
+    font-weight: bold;
+    box-shadow: var(--shadow-color) 0px 0px 16px 0px;
+}
+
+i.material-icons {
+    color: var(--shadow-color);
+}
+
+#profile-bttn i.material-icons {
+    color: var(--neutral-color);
+}
+
+legend {
+    background-color: var(--highlight-color);
+}
+
+input {
+    caret-color: var(--accent-color);
+}
+
+#search-text{
+    color: var(--shadow-color);
+}
+
+#go-to-index-msg {
+    font-size: 110%;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+#register-form input:valid {
+    border-color: var(--highlight-color);
+}
+
+#register-form input:invalid {
+    border-color: var(--accent-color);
+}
+
+#error-target, #pw-target {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+#register-form input:disabled {
+    background-color: var(--main-color) !important;
+}
+
+#register-form button:disabled {
+    background-color: var(--main-color) !important;
+}

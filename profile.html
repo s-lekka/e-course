@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta name="revised" content="17/11/2021">
+    <meta charset="utf-8">
+    <meta name=author content="3090108-3180279">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Εργασία 2 | ΠΧ4 | Εγγραφή</title>
+    <link rel="icon" href="images/school-notebook-free-download.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
+    <link href="styles/format.css" rel="stylesheet" type="text/css" />
+    <link href="styles/colors-and-fonts.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script  src="scripts/profile.js"></script>
+    <script  src="scripts/script.js"></script>
+</head>
+
+<body>
+   
+    <header>
+
+        <nav>
+            <a href="index.html">Αρχική</a>
+            
+            <div class="dropdown">Κατηγορίες</div>
+            <div id="categories-target" class="dropdown-links">loading...</div>
+            
+            <a href="register.html">Εγγραφή</a>
+            <a class="active" href="profile.html">Προφίλ</a>
+            
+        </nav>
+
+    </header>
+
+    <main class='side-view'>
+
+        <aside>
+            <form id="user-form" accept-charset="utf-8">
+                <fieldset>
+                <legend>View Profile</legend>
+                        <label for="email">e-mail</label><br>
+                        <input type="email" placeholder="email" id="email" autocomplete="on" name="signin-email" required><br>
+                        <label for="password">Κωδικός</label><br>
+                        <input type="password" placeholder="password" id="password" autocomplete="current-password" name="signin-pw" required><br>
+                        <button id="profile-bttn" type="submit"><i class="material-icons">send</i></button>
+                </fieldset>           
+            </form>
+        </aside>
+
+        
+        <div id="profile-info"></div>
+        
+
+        <script id="categories-template" type="text/x-handlebars-template">
+        
+            {{#each categories}}
+            <a href="courses.html?category={{id}}">{{title}}</a>
+            {{/each}}
+        
+        </script>
+
+        <script id="profile-template" type="text/x-handlebars-template">
+            <h1>{{fname}} {{lname}}</h1>
+            <h2>Στοιχεία Επικοινωνίας:</h2> <p>τηλ.:  {{tel}}<br>διεύθυνση:  {{adr}}</p>
+            <h2>Εκπαίδευση:</h2> <p>{{edu}}</p>
+        </script>
+
+    </main>
+
+    <footer>
+        <hr>
+        <p>
+            Ο ιστότοπος αναπτύχθηκε από τη Λέκκα Σταυρούλα.
+        </p>
+    </footer>
+
+</body>
+
+</html>
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta name="revised" content="17/11/2021">
+    <meta charset="utf-8">
+    <meta name=author content="3090108-3180279">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Εργασία 2 | ΠΧ2 | Κατηγορίες</title>
+    <link rel="icon" href="images/school-notebook-free-download.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
+    <link href="styles/format.css" rel="stylesheet" type="text/css" />
+    <link href="styles/colors-and-fonts.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script  src="scripts/script.js"></script>
+</head>
+
+<body>
+   
+    <header>
+
+        <nav>
+            <a href="index.html">Αρχική</a>
+            
+            <div class="dropdown active">Κατηγορίες</div>
+            <div id="categories-target" class="dropdown-links">loading...</div>
+            
+            <a href="register.html">Εγγραφή</a>
+            <a href="profile.html">Προφίλ</a>
+            
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div id="title-target"></div>
+        <div id="courses-target"></div>
+
+        <script id="title-template" type="text/x-handlebars-template">
+        
+            <h1>Κατηγορία: {{title}} (CategoryID:{{id}})</h1>
+        
+        </script>
+
+        <script id="courses-template" type="text/x-handlebars-template">
+            <ul>
+                {{#each courses}}
+                <li>
+                    <h2>{{title}} (CourseID:{{id}})</h2>
+                    <hr>
+                    <ul>
+                        <li><img src="https://elearning-aueb.herokuapp.com/static/images/{{img}}"></li>
+                        <li><h2>Μαθησιακοί Στόχοι:</h2> <p>{{objectives}}</p></li>
+                        <li><h2>Περιγραφή Μαθήματος:</h2> <p>{{description}}</p></li>
+                    </ul>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+
+        <script id="categories-template" type="text/x-handlebars-template">
+        
+            {{#each categories}}
+            <a href="?category={{id}}">{{title}}</a>
+            {{/each}}
+        
+        </script>
+    </main>
+    
+    <footer>
+        <hr>
+        <p>
+            Ο ιστότοπος αναπτύχθηκε από τη Λέκκα Σταυρούλα.
+        </p>
+    </footer>
+
+</body>
+
+</html>
